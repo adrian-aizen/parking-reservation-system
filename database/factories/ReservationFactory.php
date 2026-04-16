@@ -22,6 +22,7 @@ class ReservationFactory extends Factory
 
         return [
             'user_id' => User::factory(),
+            'parking_lot_id' => \App\Models\ParkingLot::inRandomOrder()->first()?->id ?? \App\Models\ParkingLot::factory(),
 
             'vehicle_type' => $this->faker->randomElement([
                 'Car',
